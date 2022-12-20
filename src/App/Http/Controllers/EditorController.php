@@ -92,8 +92,8 @@ class EditorController extends Controller
                         'id' => $id_prefix . $fileInfo->getFilename(),
                         'category' => $category,
                         'label' => $file_name->replace('-', ' ')->title(),
-                        'media' => app('template-icon')->url(),
-                        'content' => $content,
+                        'media' => $media ? $media->innerHtml() : '',
+                        'content' => $content ? $content->innerHtml() : '',
                     ];
                 }
 
