@@ -1,5 +1,5 @@
 {
-    "name": "jd-dotlogics/laravel-grapesjs",
+    "name": "jd-dotlogics_tanle/laravel-grapesjs",
     "description": "A package to easily integrate GrapesJS into your laravel proejct.",
     "type": "library",
     "require": {
