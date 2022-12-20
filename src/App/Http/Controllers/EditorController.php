@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\File;
 use App\Http\Controllers\Controller;
 use Dotlogics\Grapesjs\App\Traits\EditorTrait;
 use Illuminate\Support\Facades\View;
+use HTMLDomParser\DomFactory;
 
 class EditorController extends Controller
 {
@@ -84,6 +85,9 @@ class EditorController extends Controller
                     $content = view("laravel-grapesjs::{$view_base}{$file_name}")->render();
 
                     // dd($content);
+                     $dom = DomFactory::load($content);
+                    $media = $dom->getElementByTagName('media');
+                    $content = $dom->getElementByTagName('content');
                     $templates [] = [
                         'id' => $id_prefix . $fileInfo->getFilename(),
                         'category' => $category,
